@@ -18,8 +18,15 @@ namespace WindEX
                 var lines = html.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
                 foreach (var line in lines)
                 {
-                    var key = line.Split('\t')[1];
-                    System.Diagnostics.Process.Start("cmd.exe", "/c slmgr /ipk " + key);
+                    try
+                    {
+                        var key = line.Split('\t')[1];
+                        System.Diagnostics.Process.Start("cmd.exe", "/c slmgr /ipk " + key);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.message);
+                    }
                 }
             }
         }
