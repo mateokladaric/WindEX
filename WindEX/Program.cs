@@ -25,7 +25,7 @@ namespace WindEX
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.message);
+                        Console.WriteLine(ex.Message);
                     }
                 }
             }
